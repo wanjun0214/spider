@@ -5,38 +5,11 @@ headers 参数 x-zse-96: 2.0_aL2qb7HqghtxFGFBZuFqFDuBnqSYS0OyZqOyHUH8kXOf
 全局搜索 定位
  */
 
-// function proxy(proxy_array){
-//     for (let i=0;i<proxy_array.length;i++){
-//         eval(
-//             proxy_array[i] +`= new Proxy(`+proxy_array[i]+`,{
-//             get(target,key){
-//                 debugger;
-//                 console.log('--------------------');
-//                 console.log('获取了: '+'`+proxy_array[i]+`'+'.'+key+'属性');
-//                 console.log('--------------------');
-//                 return target[key];
-//             }
-//         })`
-//         )
-//     }
-// }
 const jsdom = require("jsdom");
 const {JSDOM} = jsdom;
 const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
 window = dom.window;
 var params = {
-    // location: {
-    //     "ancestorOrigins": {},
-    //     "href": "https://www.toutiao.com/",
-    //     "origin": "https://www.toutiao.com",
-    //     "protocol": "https:",
-    //     "host": "www.toutiao.com",
-    //     "hostname": "www.toutiao.com",
-    //     "port": "",
-    //     "pathname": "/",
-    //     "search": "",
-    //     "hash": ""
-    // },
     navigator: {
         "appCodeName": "Mozilla",
         "appName": "Netscape",
@@ -59,23 +32,6 @@ var params = {
     }
 }
 Object.assign(global, params)
-
-// document = {};
-// location = {};
-// navigator = {
-//     userAgent:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36',
-//     webdriver: false
-// };
-// window = {
-//     constructor:function () {
-//         console.log(arguments)
-//     },
-//     navigator:navigator,
-//     name: '',
-//
-// };
-// var proxy_array = ['window'];
-// proxy(proxy_array);
 
 var _u;
 !function (e) {
@@ -764,19 +720,13 @@ function x_zse_96(cookie) {
         a = "/api/v4/search_v3?t=general&q=python&correction=1&offset=20&limit=20&filter_fields=&lc_idx=20&show_all_topics=0&search_source=Normal"
         , c = ""
         , s = [r, a, i, H(c) && c, o].filter(Boolean).join("+");
-// console.log(s)
-//101_3_2.0+/api/v3/oauth/sms/supported_countries+"AICR8aPIrhSPTl6EBiQcG_XtqdY4wDOLXIY=|1648106922"
+
     c = _u(255)
     u = _u.n(c)
     d = _u(163)
     f = _u.n(d)
     let signature = u()(f()(s))
     console.log(f()(s))
-//"c7552ab011111d1d622b3a98980abdc1"
-//     console.log(signature)
-
-// a8Sq269yeLSxUwty8TxB20U0Q72xeLNBzht0QQLqc8NY
-// aX28HUL8Q72X6HY8BTN0kQuBr_SxrXY0mRF8UU9qcMYf9Tuw
     return "2.0_" + signature
 }
 
